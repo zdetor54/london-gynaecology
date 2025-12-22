@@ -1,3 +1,17 @@
+/* Nav phone link custom style */
+.nav-phone-link {
+    color: var(--primary-color) !important;
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-decoration: none !important;
+    transition: color 0.2s;
+}
+.nav-phone-link:hover,
+.nav-phone-link:focus {
+    color: #139a8f !important; /* slightly darker teal for hover */
+    text-decoration: none !important;
+}
 /* Map Section (moved from subpage-shared.css) */
 .map-section {
     width: 100%;
