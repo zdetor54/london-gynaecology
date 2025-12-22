@@ -113,6 +113,7 @@
     background: #fff;
     display: block;
 }
+
 :root {
     --primary-color: #18c3b7;
     --secondary-color: #18c3b7;
@@ -121,11 +122,17 @@
     --text-gray: #6a6b6c;
 }
 
+/* Utility class for FontAwesome icons to use primary color */
+.fa-primary-color {
+    color: var(--primary-color) !important;
+}
+
 body {
     font-family: 'Muli', sans-serif;
     color: var(--text-gray);
     font-size: 18px;
 }
+
 
 /* Navbar Styles */
 .navbar {
