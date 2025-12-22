@@ -8,14 +8,14 @@
     --header-teal-end: rgba(87,173,179,0.8);
 }
 
-/* Page Header with Diagonal Slant */
+/* Page Header with Curved Bottom */
 .page-header {
-    background: linear-gradient(90deg, var(--header-teal-start) 0%, var(--header-teal-end) 100%);
-    padding: 60px 0 150px 0;
+    background: var(--primary-color);
+    padding: 40px 0 90px 0;
     margin-bottom: 0;
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
     z-index: 10;
+    overflow: hidden;
 }
 
 .page-header h1 {
@@ -29,11 +29,9 @@
 .main-content-section {
     background-color: var(--page-bg-light);
     padding: 80px 40px;
-    margin-top: -100px;
+    margin-top: -80px;
     position: relative;
     z-index: 1;
-    box-shadow: 0 8px 32px 8px rgba(0,0,0,0.04);
-    border-radius: 24px;
 }
 
 .main-content-section .row {
@@ -79,21 +77,6 @@
     height: auto;
 }
 
-/* Map Section */
-.map-section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 40px 0;
-}
-
-.map-section iframe {
-    width: 100%;
-    max-width: 1400px;
-    height: 400px;
-    border: 0;
-    box-shadow: 0 8px 32px 8px rgba(0,0,0,0.07);
-}
 
 /* Responsive adjustments */
 @media (max-width: 767px) {
