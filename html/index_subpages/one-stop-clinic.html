@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Stop Clinic - London Gynaecology</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../static/style.css">
+    <link rel="stylesheet" href="../../static/subpage-shared.css">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>One-stop clinic</h1>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="main-content-section">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0 content-column">
+                    <h1>
+                        The <span class="highlight-text">One-Stop</span><br>Gynaecology Clinic
+                    </h1>
+                    <p>
+                        In providing you with a "one-stop clinic", you can undergo multiple tests and consultations all at the same time, saving time, reducing the need for multiple appointments, and often enabling faster diagnosis and treatment by minimizing delays between tests and consultations, which makes your healthcare experience more efficient and less stressful.
+                    </p>
+                </div>
+                <div class="col-lg-6 image-column">
+                    <img src="https://londongynaecology.com/wp-content/uploads/2024/12/shapeshift_local_business_03_s6_team_04.jpg" 
+                         alt="Healthcare Professional" 
+                         class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="map-section">
+        <iframe title="Google Map" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.4647836447687!2d-0.1479!3d51.5186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ad554c335c1%3A0x142d7f7096d38e63!2s27-29%20Harley%20St%2C%20Marylebone%2C%20London%20W1G%209QP%2C%20UK!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus">
+        </iframe>
+    </div>
+
+    <div id="footer-placeholder"></div>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Load navigation
+        fetch('../nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+        // Load footer
+        fetch('../footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
