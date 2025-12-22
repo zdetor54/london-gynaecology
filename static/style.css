@@ -1,3 +1,16 @@
+/* Map Section (moved from subpage-shared.css) */
+.map-section {
+    width: 100%;
+    display: block;
+    margin: 0;
+}
+
+.map-section iframe {
+    width: 100vw;
+    height: 400px;
+    border: 0;
+    box-shadow: 0 8px 32px 8px rgba(0,0,0,0.07);
+}
 /* Insurance Logos Section */
 .insurance-logos-section {
     width: 100%;
