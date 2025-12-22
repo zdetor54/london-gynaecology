@@ -12,6 +12,54 @@
     color: #139a8f !important; /* slightly darker teal for hover */
     text-decoration: none !important;
 }
+
+/* Navbar brand logo and text */
+
+.navbar-logo-img {
+    height: 100%;
+    max-height: 64px;
+    width: auto;
+    margin-right: 12px;
+    display: block;
+}
+
+.navbar-brand.d-flex {
+    align-items: center !important;
+    height: 100%;
+}
+
+
+.navbar-brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2;
+}
+
+.brand-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.brand-subtitle {
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: var(--text-gray);
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 1200px) {
+    .navbar-logo-img {
+        height: 40px;
+    }
+    .brand-name {
+        font-size: 1.5rem;
+    }
+    .brand-subtitle {
+        font-size: 0.87rem;
+    }
+}
 /* Map Section (moved from subpage-shared.css) */
 .map-section {
     width: 100%;
