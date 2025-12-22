@@ -16,44 +16,60 @@
 /* Navbar brand logo and text */
 
 .navbar-logo-img {
-    height: auto;
-    max-height: 48px;
-    width: auto;
+    height: 48px !important;
+    max-height: 48px !important;
+    width: auto !important;
+    max-width: 150px !important;
     margin-right: 12px;
     display: block;
+    flex-shrink: 0;
+    object-fit: contain;
 }
-
-/* Safari-specific fix for logo sizing */
-@media not all and (min-resolution:.001dpcm) { @supports (-webkit-appearance:none) {
-    .navbar-logo-img {
-        max-height: 44px !important;
-    }
-}}
 
 .navbar-brand.d-flex {
     align-items: center !important;
-    height: 100%;
+    height: auto;
+    max-width: 100%;
+    flex-wrap: nowrap;
 }
-
 
 .navbar-brand-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     line-height: 1.2;
+    flex-shrink: 1;
+    min-width: 0;
 }
 
 .brand-name {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--primary-color);
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    color: var(--primary-color) !important;
+    white-space: nowrap;
 }
 
 .brand-subtitle {
-    font-size: 0.68rem;
-    font-weight: 400;
-    color: var(--text-gray);
+    font-size: 0.68rem !important;
+    font-weight: 400 !important;
+    color: var(--text-gray) !important;
     letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* Mobile logo and brand text sizing */
+@media (max-width: 768px) {
+    .navbar-logo-img {
+        height: 40px !important;
+        max-height: 40px !important;
+        max-width: 80px !important;
+    }
+    .brand-name {
+        font-size: 1rem !important;
+    }
+    .brand-subtitle {
+        font-size: 0.6rem !important;
+    }
 }
 
 @media (max-width: 1200px) {
