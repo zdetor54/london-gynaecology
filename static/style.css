@@ -92,22 +92,28 @@ body {
 
 /* Dropdown Menu Animation */
 .navbar-nav .dropdown-menu {
-    display: block;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
     border: none;
     box-shadow: 0 8px 24px rgba(0,0,0,0.12);
     border-radius: 8px;
     padding: 10px 0;
     margin-top: 10px;
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
-.navbar-nav .dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+/* Hover effect for desktop only */
+@media (min-width: 992px) {
+    .navbar-nav .dropdown-menu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    }
+    
+    .navbar-nav .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
 }
 
 .navbar-nav .dropdown-item {
@@ -331,8 +337,7 @@ body {
 }
 
 .about-text {
-    font-size: 18px;
-    line-height: 2em;
+    line-height: 1.5em;
     margin-bottom: 20px;
     text-align: justify;
 }
@@ -480,6 +485,10 @@ body {
         margin-top: 10px;
     }
     
+    .about-section {
+        padding: 40px 20px;
+    }
+    
     .about-image {
         max-width: 280px;
     }
@@ -496,5 +505,16 @@ body {
     
     .testimonial-icon {
         font-size: 25px;
+    }
+    
+    /* Center dropdown menu on mobile */
+    .navbar-nav .dropdown-menu {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .navbar-nav .dropdown-item:hover {
+        padding-left: 20px;
     }
 }
