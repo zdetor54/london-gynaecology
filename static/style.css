@@ -541,10 +541,8 @@ body {
     }
     
     .navbar-nav .dropdown-item {
-        background: #fff;
+        background: transparent;
         margin: 5px auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        max-width: 280px;
+        padding: 5px 10px;
     }
 }
