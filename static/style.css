@@ -113,6 +113,7 @@
     background: #fff;
     display: block;
 }
+
 :root {
     --primary-color: #18c3b7;
     --secondary-color: #18c3b7;
@@ -121,11 +122,17 @@
     --text-gray: #6a6b6c;
 }
 
+/* Utility class for FontAwesome icons to use primary color */
+.fa-primary-color {
+    color: var(--primary-color) !important;
+}
+
 body {
     font-family: 'Muli', sans-serif;
     color: var(--text-gray);
     font-size: 18px;
 }
+
 
 /* Navbar Styles */
 .navbar {
@@ -244,8 +251,8 @@ body {
 
 /* Hero Section */
 .hero-section {
-    padding: 80px 0;
-    background-color: #fff;
+    padding: 0;
+    background-color: transparent;
 }
 
 .hero-content h1 {
@@ -258,7 +265,6 @@ body {
 .hero-content p {
     font-size: 18px;
     line-height: 2em;
-    margin-bottom: 30px;
 }
 
 .hero-image {
@@ -301,26 +307,21 @@ body {
 
 /* Services Section */
 .services-section {
-    padding: 60px 0;
     background-color: var(--light-gray);
 }
 
-.section-title {
-    text-align: center;
-    margin-bottom: 60px;
+.hero-content {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.section-title h2 {
+.hero-content h2 {
     font-size: 40px;
     color: var(--primary-color);
     font-weight: 700;
     margin-bottom: 20px;
-}
-
-.section-title p {
-    font-size: 16px;
-    max-width: 700px;
-    margin: 0 auto;
 }
 
 /* Service Cards */
@@ -472,7 +473,7 @@ body {
 
 .testimonial-icon {
     font-size: 35px;
-    color: var(--light-gray);
+    color: var(--primary-color);
     margin-bottom: 15px;
 }
 
@@ -581,7 +582,7 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
     .hero-content h1,
-    .section-title h2,
+    .hero-content h2,
     .about-heading {
         font-size: 34px;
     }
