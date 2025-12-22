@@ -120,12 +120,28 @@ body {
     padding: 10px 20px;
     transition: all 0.2s ease;
     color: var(--dark-color);
+    position: relative;
+}
+
+.navbar-nav .dropdown-item::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
 }
 
 .navbar-nav .dropdown-item:hover {
-    background-color: var(--light-gray);
+    background-color: transparent;
     color: var(--primary-color);
-    padding-left: 25px;
+}
+
+.navbar-nav .dropdown-item:hover::before {
+    width: 80%;
 }
 
 /* Hero Section */
@@ -508,13 +524,27 @@ body {
     }
     
     /* Center dropdown menu on mobile */
-    .navbar-nav .dropdown-menu {
+    .navbar-nav {
         text-align: center;
-        margin-left: auto;
-        margin-right: auto;
+        width: 100%;
     }
     
-    .navbar-nav .dropdown-item:hover {
-        padding-left: 20px;
+    .navbar-nav .nav-item {
+        width: 100%;
+    }
+    
+    .navbar-nav .dropdown-menu {
+        text-align: center;
+        box-shadow: none;
+        background: transparent;
+        border: none;
+    }
+    
+    .navbar-nav .dropdown-item {
+        background: #fff;
+        margin: 5px auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        max-width: 280px;
     }
 }
