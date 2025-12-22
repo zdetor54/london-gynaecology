@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees - London Gynaecology</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/subpage-shared.css">
+</head>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Fees</h1>
+        </div>
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" style="position:absolute;bottom:0;left:0;width:100%;height:120px;display:block;margin-bottom:-2px;z-index:2;">
+            <path fill="#f8f9fa" d="M0,120 L0,120 Q720,0 1440,0 L1440,121 Z"></path>
+        </svg>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="main-content-section" style="position:relative;z-index:1;margin-top:-80px;">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0 content-column d-flex flex-column align-items-center">
+                    <h1>
+                        I am <span class="highlight-text">Fee Assured</span>
+                        <br> with all Insurance Providers
+                    </h1>
+
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 col-lg-5">
+                                <div class="service-card-link" style="cursor:default;">
+                                    <div class="service-card">
+                                        <div class="service-card-body">
+                                            <p class="service-card-category">NEW PATIENT</p>
+                                            <h6 class="service-card-title">APPOINTMENT</h6>
+                                            <p class="service-card-text" style="flex-grow:0;">Initial consultation and assessment</p>
+                                            <div>
+                                                <div class="fee-price">£280</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-5">
+                                <div class="service-card-link" style="cursor:default;">
+                                    <div class="service-card">
+                                        <div class="service-card-body">
+                                            <p class="service-card-category">FOLLOW-UP</p>
+                                            <h6 class="service-card-title">APPOINTMENT</h6>
+                                            <p class="service-card-text" style="flex-grow:0;">Subsequent review and care</p>
+                                            <div>
+                                                <div class="fee-price">£180</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="insurance-logos-section" style="width:100%;display:flex;justify-content:center;margin:40px 0 40px 0;">
+                        <img src="../assets/Insurance-Logos-1536x127.jpg" alt="Insurance Logos" style="max-width:1080px;width:100%;height:auto;box-shadow:0 8px 32px 8px rgba(0,0,0,0.07);background:#fff;" />
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Load navigation
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
