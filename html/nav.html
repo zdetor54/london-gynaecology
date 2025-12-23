@@ -18,7 +18,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav align-items-center">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                    <a class="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown">
                         One Stop Clinics
                     </a>
                     <ul class="dropdown-menu">
@@ -47,3 +47,18 @@
         </div>
     </div>
 </nav>
+
+<script>
+// Handle dropdown behavior: click navigates on desktop, toggles on mobile
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    
+    dropdownToggle.addEventListener('click', function(e) {
+        // On desktop (xl breakpoint), allow navigation
+        if (window.innerWidth >= 1200) {
+            window.location.href = this.getAttribute('href');
+        }
+        // On mobile, Bootstrap handles the toggle automatically
+    });
+});
+</script>

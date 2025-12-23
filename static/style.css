@@ -1,3 +1,87 @@
+/* Remove underline from footer brand link */
+.footer-brand,
+.footer-brand:visited,
+.footer-brand:hover,
+.footer-brand:active,
+.footer-brand * {
+    text-decoration: none !important;
+}
+/* Footer bottom links styling */
+.footer-links-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding: 16px 0 16px 0;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    gap: 16px;
+}
+.footer-bottom-link {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.2s, text-decoration 0.2s;
+}
+.footer-bottom-link:hover {
+    color: var(--secondary-color);;
+    text-decoration: underline solid;
+}
+/* Global mailto and tel link styling */
+a[href^="mailto:"],
+a[href^="tel:"] {
+    color: var(--secondary-color);
+    text-decoration: underline dotted;
+    transition: color 0.2s, text-decoration 0.2s;
+}
+a[href^="mailto:"]:hover,
+a[href^="tel:"]:hover {
+    color: var(--secondary-color);
+    text-decoration: underline solid;
+}
+/* Insurance logos section */
+.insurance-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0;
+    background: var(--light-gray);
+}
+.insurance-logo {
+    height: 60px;
+    max-width: 120px;
+    object-fit: contain;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    margin: 0 4px 8px 4px;
+    flex: 1 1 90px;
+}
+@media (max-width: 768px) {
+    .insurance-logo {
+        height: 40px;
+        max-width: 80px;
+        flex: 1 1 40%;
+    }
+    .insurance-logos {
+        gap: 10px;
+    }
+}
+@media (max-width: 480px) {
+    .insurance-logo {
+        height: 32px;
+        max-width: 60px;
+        flex: 1 1 45%;
+    }
+    .insurance-logos {
+        gap: 6px;
+    }
+}
 /* Big, centered price for fees */
 .fee-price {
     font-size: 2.5rem;
@@ -21,6 +105,14 @@
     color: #139a8f !important; /* slightly darker teal for hover */
     text-decoration: none !important;
 }
+
+.insurance-logo {
+    height: 80px;
+    object-fit: contain;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    /* Optional: set max-width if needed */
+    max-width: 120px;
+  }
 
 /* Navbar brand logo and text */
 
@@ -49,6 +141,7 @@
     line-height: 1.2;
     flex-shrink: 1;
     min-width: 0;
+    outline: none !important;
 }
 
 .brand-name {
@@ -125,7 +218,7 @@
 
 :root {
     --primary-color: #18c3b7;
-    --secondary-color: #18c3b7;
+    --secondary-color: #5866FF;
     --dark-color: #3b4446;
     --light-gray: #f8f8f8;
     --text-gray: #6a6b6c;
@@ -453,7 +546,9 @@ body {
     margin-top: 5px;
 }
 
-.about-heading {
+.about-heading, 
+.testimonials-section h2,
+.contact-section h2 {
     font-size: 40px;
     color: var(--primary-color);
     font-weight: 700;
@@ -468,7 +563,6 @@ body {
 
 /* Testimonials Section */
 .testimonials-section {
-    padding: 60px 0;
     background-color: var(--light-gray);
 }
 
@@ -508,7 +602,6 @@ body {
 
 /* Contact Section */
 .contact-section {
-    padding: 60px 0;
     background-color: var(--light-gray);
 }
 
