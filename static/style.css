@@ -1,3 +1,15 @@
+@media (max-width: 991.98px) {
+    /* .navbar {
+        position: static !important;
+    } */
+    .navbar.py-2, .navbar .py-2 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    body {
+        padding-top: 0 !important;
+    }
+}
 .contact-card-flex {
     display: flex;
     flex-direction: row;
@@ -260,8 +272,17 @@ body {
     background-color: #fff;
     box-shadow: 0 2px 30px rgba(0,0,0,0.08);
     padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050;
+    transition: box-shadow 0.3s;
 }
 
+body {
+    padding-top: 80px; /* Adjust if navbar height changes */
+}
 .navbar-brand img {
     max-width: 280px;
     height: auto;
