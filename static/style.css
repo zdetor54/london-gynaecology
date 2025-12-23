@@ -1,3 +1,9 @@
+/* Ensure hero-section container has a minimum height */
+.hero-section .container {
+    min-height: 500px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+}
 @media (max-width: 991.98px) {
     /* .navbar {
         position: static !important;
@@ -264,6 +270,9 @@ body {
     font-family: 'Muli', sans-serif;
     color: var(--text-gray);
     font-size: 18px;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 
