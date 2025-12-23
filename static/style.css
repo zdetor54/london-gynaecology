@@ -298,6 +298,15 @@ body {
     width: 80%;
 }
 
+.navbar-nav .nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link.active::before {
+    width: 80%;
+}
+
 .btn-appointment {
     background: transparent;
     color: var(--primary-color);

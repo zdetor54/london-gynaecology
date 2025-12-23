@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Go Private - London Gynaecology</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/subpage-shared.css">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Why Go Private</h1>
+        </div>
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" style="position:absolute;bottom:0;left:0;width:100%;height:120px;display:block;margin-bottom:-2px;z-index:2;">
+            <path fill="#f8f9fa" d="M0,120 L0,120 Q720,0 1440,0 L1440,121 Z"></path>
+        </svg>
+    </section>
+
+
+    <section class="main-content-section" style="position:relative;z-index:1;margin-top:-80px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 mb-4 mb-lg-0">
+                    <h3>The waiting time has been improved</h3>
+                    <p>It is not ideal to wait weeks for an appointment when you are concerned about your health. If you want to see a gynaecologist on the NHS, a referral from your GP or hospital physician is required, which can take several weeks. You must then be scheduled in to see the specialist, which may take another few weeks depending on when the consultant is next available.</p>
+
+                    <p>In contrast, private gynecologist allows you to see an accredited specialist at a time convenient to you, thereby reducing your waiting time. Those who feel they cannot wait under the normal process and need to see a gynaecologist urgently may benefit from this.</p>
+
+                    <h3>Care of the highest quality and specializations</h3>
+                    <p>Public healthcare may not allow you to pick your own gynaecologist after being referred. The option may work in some cases, but not for everyone.</p>
+
+                    <p>By contrast, when choosing a private clinic, you have the option of consulting with your choice of gynaecologist. Consultants with many years of experience will deliver all procedures. In addition to offering high-quality, patient-centered care, private healthcare clinics also provide exceptional facilities.</p>
+
+                    <h3>Consultations last longer</h3>
+                    <p>Most public health gynaecologists have a long list of patients to see, which makes it difficult to discuss your issue in great detail. During a single consultation, it is often difficult to convey health concerns or potential treatments within a standard 15-20 minute time slot.</p>
+
+                    <p>There is often more time available to a private gynaecologist for consultations, so you can discuss your concerns in more detail. By scheduling an appointment with a private gynaecoligist, you will have the opportunity to share your thoughts, concerns, and undergo any examinations, if necessary, as well as discuss your diagnosis and treatment options. In many cases, this can be accomplished within a much shorter timeframe, sometimes on the same day.</p>
+
+                    <h3>Opening hours that are longer</h3>
+                    <p>Many people find it difficult to schedule a medical appointment during their working day due to a full-time, 9-5 job. Since most GP practices are closed after you commute from your workplace, booking an appointment can be quite challenging. Due to the fact that the majority of NHS GP practices are not open on weekends and in the evenings, employees often have to request time off work to address their health concerns.</p>
+
+                    <p>We offer extended hours, such as evening and Saturday hours, so you can book appointments when it is convenient for them. Due to this flexibility, you will no longer have to worry about falling behind on projects or working extra hours to meet deadlines if you go private.</p>
+
+                    <h3>A quick result of the test</h3>
+                    <p>To determine the cause of your health concern, you may require particular tests. As public health practices deal with a large number of patients, it can take several weeks before you receive your test results.</p>
+
+                    <p>Having a private gynaecologist  allows you to receive your results more quickly, which reduces the nerve-wracking waiting game. You can even receive test results within 24 hours in some cases.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="footer-placeholder"></div>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Load navigation
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+                // Set active state for Second Opinions link
+                const secondOpinionsLink = document.querySelector('a.nav-link[href="/html/why-go-private.html"]');
+                if (secondOpinionsLink) {
+                    secondOpinionsLink.classList.add('active');
+                }
+            });
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
