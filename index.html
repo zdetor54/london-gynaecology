@@ -264,29 +264,7 @@
                     <h2>Get in Touch</h2>
                 </div>
                 <div class="col-lg-8">
-                    <form class="contact-form">
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <label class="form-label">Name*</label>
-                                <input type="text" class="form-control" placeholder="Type Your Name Here" required>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label class="form-label">Email*</label>
-                                <input type="email" class="form-control" placeholder="Type Your Email Here" required>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label class="form-label">Phone</label>
-                                <input type="tel" class="form-control" placeholder="Type Your Phone Here">
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Message</label>
-                            <textarea class="form-control" rows="5" placeholder="Type Your Message Here"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-submit">
-                            Send Message <i class="fas fa-caret-right"></i>
-                        </button>
-                    </form>
+                    <div id="contact-form-placeholder"></div>
                 </div>
             </div>
         </div>
@@ -313,6 +291,13 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('nav-placeholder').innerHTML = data;
+            });
+        
+        // Load contact form
+        fetch('html/contact-form.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('contact-form-placeholder').innerHTML = data;
             });
         
         // Load footer
