@@ -1,3 +1,22 @@
+.contact-card-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 32px;
+}
+
+@media (max-width: 991.98px) {
+    .contact-card-flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .contact-card-flex .map-container {
+        margin-left: 0 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 250px !important;
+    }
+}
 /* Remove underline from footer brand link */
 .footer-brand,
 .footer-brand:visited,
@@ -279,6 +298,15 @@ body {
     width: 80%;
 }
 
+.navbar-nav .nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link.active::before {
+    width: 80%;
+}
+
 .btn-appointment {
     background: transparent;
     color: var(--primary-color);
@@ -548,11 +576,16 @@ body {
 
 .about-heading, 
 .testimonials-section h2,
-.contact-section h2 {
+.contact-section h2{
     font-size: 40px;
     color: var(--primary-color);
     font-weight: 700;
     text-transform: capitalize;
+}
+
+h2.contact-section-title,
+h3.contact-section-title {
+    color: var(--primary-color) !important;
 }
 
 .about-text {
@@ -572,6 +605,15 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     height: 100%;
+}
+
+.contact-title-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 32px;
+    display: block;
 }
 
 .testimonial-icon {
@@ -608,7 +650,7 @@ body {
 .contact-form {
     background: #fff;
     padding: 40px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     border-radius: 8px;
 }
 
@@ -746,4 +788,12 @@ body {
         margin: 5px auto;
         padding: 5px 10px;
     }
+}
+
+.main-contact-us-section {
+    background-color: var(--page-bg-light);
+    padding: 80px 0;
+    margin-top: -80px;
+    position: relative;
+    z-index: 1;
 }
