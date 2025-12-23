@@ -1,3 +1,7 @@
+/* Make h3 headings teal in main content section */
+.main-content-section h3 {
+    color: var(--primary-color);
+}
 /* Shared Subpage Styles */
 
 :root {
