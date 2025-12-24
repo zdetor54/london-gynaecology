@@ -1,3 +1,8 @@
+/* Add small padding to all h4 elements globally */
+h4 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
 /* Ensure hero-section container has a minimum height */
 .hero-section .container {
     min-height: 500px; /* Adjust as needed */
@@ -250,7 +255,6 @@ a[href^="tel:"]:hover {
     height: auto;
     box-shadow: 0 8px 32px 8px rgba(0,0,0,0.07);
     background: #fff;
-    display: block;
 }
 
 :root {
@@ -334,6 +338,17 @@ body {
 }
 
 .navbar-nav .nav-link.active::before {
+    width: 80%;
+}
+
+/* Highlight active dropdown-item in the same way as nav-link.active */
+.navbar-nav .dropdown-item.active {
+    color: var(--primary-color);
+    font-weight: 600;
+    background-color: transparent;
+}
+
+.navbar-nav .dropdown-item.active::before {
     width: 80%;
 }
 

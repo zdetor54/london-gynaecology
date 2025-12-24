@@ -1,12 +1,23 @@
 /* Remove any unwanted purple overlay in hero-section */
-.hero-section, .hero-section .container, .hero-section .row, .hero-section [class*="col-"] {
+.hero-section, 
+.hero-section .container, 
+.hero-section .row, 
+.hero-section [class*="col-"],
+.hero-section [class^="col-"],
+.hero-section [class*=" col-"],
+.hero-section .col-lg-6,
+.hero-section .col-md-6,
+.hero-section .col-12,
+.hero-section div[class*="col"] {
     background: none !important;
+    background-color: transparent !important;
     box-shadow: none !important;
 }
+
 /* Hero Section with Video Background */
 .hero-section {
     position: relative;
-    min-height: 500px;
+    min-height: 600px;
     display: flex;
     align-items: center;
     padding: 80px 0 60px 0;
@@ -43,3 +54,4 @@
     position: relative;
     z-index: 2;
 }
+
