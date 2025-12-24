@@ -1,172 +1,73 @@
-/* Add small padding to all h4 elements globally */
+/* ============================================
+   CSS VARIABLES
+   ============================================ */
+:root {
+    --primary-color: #14afa5;
+    --secondary-color: #5866FF;
+    --dark-color: #3b4446;
+    --light-gray: #f8f8f8;
+    --text-gray: #6a6b6c;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+body {
+    margin: 0;
+    padding: 80px 0 0;
+    overflow-x: hidden;
+    font-family: 'Muli', sans-serif;
+    font-size: 18px;
+    color: var(--text-gray);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
 h4 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
-/* Ensure hero-section container has a minimum height */
-.hero-section .container {
-    min-height: 500px; /* Adjust as needed */
-    display: flex;
-    align-items: center;
-}
-@media (max-width: 991.98px) {
-    /* .navbar {
-        position: static !important;
-    } */
-    .navbar.py-2, .navbar .py-2 {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-    }
-    body {
-        padding-top: 0 !important;
-    }
-}
-.contact-card-flex {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    gap: 32px;
+
+h2.contact-section-title,
+h3.contact-section-title {
+    color: var(--primary-color) !important;
 }
 
-@media (max-width: 991.98px) {
-    .contact-card-flex {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .contact-card-flex .map-container {
-        margin-left: 0 !important;
-        width: 100% !important;
-        min-width: 0 !important;
-        height: 250px !important;
-    }
-}
-/* Remove underline from footer brand link */
-.footer-brand,
-.footer-brand:visited,
-.footer-brand:hover,
-.footer-brand:active,
-.footer-brand * {
-    text-decoration: none !important;
-}
-/* Footer bottom links styling */
-.footer-links-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 2px solid var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-    padding: 16px 0 16px 0;
-    margin-top: 24px;
-    margin-bottom: 8px;
-    gap: 16px;
-}
-.footer-bottom-link {
-    color: var(--primary-color);
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    font-size: 1.1rem;
-    text-decoration: none;
-    transition: color 0.2s, text-decoration 0.2s;
-}
-.footer-bottom-link:hover {
-    color: var(--secondary-color);;
-    text-decoration: underline solid;
-}
-/* Global mailto and tel link styling */
+/* ============================================
+   LINKS
+   ============================================ */
 a[href^="mailto:"],
 a[href^="tel:"] {
     color: var(--secondary-color);
     text-decoration: underline dotted;
     transition: color 0.2s, text-decoration 0.2s;
 }
+
 a[href^="mailto:"]:hover,
 a[href^="tel:"]:hover {
     color: var(--secondary-color);
     text-decoration: underline solid;
 }
-/* Insurance logos section */
-.insurance-logos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 0;
-    background: var(--light-gray);
-}
-.insurance-logo {
-    height: 60px;
-    max-width: 120px;
-    object-fit: contain;
-    background: #fff;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-    margin: 0 4px 8px 4px;
-    flex: 1 1 90px;
-}
-@media (max-width: 768px) {
-    .insurance-logo {
-        height: 40px;
-        max-width: 80px;
-        flex: 1 1 40%;
-    }
-    .insurance-logos {
-        gap: 10px;
-    }
-}
-@media (max-width: 480px) {
-    .insurance-logo {
-        height: 32px;
-        max-width: 60px;
-        flex: 1 1 45%;
-    }
-    .insurance-logos {
-        gap: 6px;
-    }
-}
-/* Big, centered price for fees */
-.fee-price {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--primary-color);
-    text-align: center;
-    margin: 1rem 0 0.5rem 0;
-    letter-spacing: 1px;
-}
-/* Nav phone link custom style */
-.nav-phone-link {
-    color: var(--primary-color) !important;
-    font-weight: bold;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    text-decoration: none !important;
-    transition: color 0.2s;
-}
-.nav-phone-link:hover,
-.nav-phone-link:focus {
-    color: #139a8f !important; /* slightly darker teal for hover */
-    text-decoration: none !important;
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050;
+    padding: 10px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 30px rgba(20,175,165,0.08);
+    transition: box-shadow 0.3s;
 }
 
-.insurance-logo {
-    height: 80px;
-    object-fit: contain;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-    /* Optional: set max-width if needed */
-    max-width: 120px;
-  }
-
-/* Navbar brand logo and text */
-
-.navbar-logo-img {
-    height: 48px !important;
-    max-height: 48px !important;
-    width: auto !important;
-    max-width: 150px !important;
-    margin-right: 12px;
-    display: block;
-    flex-shrink: 0;
-    object-fit: contain;
+.navbar-brand img {
+    max-width: 280px;
+    height: auto;
 }
 
 .navbar-brand.d-flex {
@@ -176,13 +77,24 @@ a[href^="tel:"]:hover {
     flex-wrap: nowrap;
 }
 
+.navbar-logo-img {
+    display: block;
+    height: 48px !important;
+    max-height: 48px !important;
+    width: auto !important;
+    max-width: 150px !important;
+    margin-right: 12px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
 .navbar-brand-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    line-height: 1.2;
-    flex-shrink: 1;
     min-width: 0;
+    flex-shrink: 1;
+    line-height: 1.2;
     outline: none !important;
 }
 
@@ -201,115 +113,15 @@ a[href^="tel:"]:hover {
     white-space: nowrap;
 }
 
-/* Mobile logo and brand text sizing */
-@media (max-width: 768px) {
-    .navbar-logo-img {
-        height: 40px !important;
-        max-height: 40px !important;
-        max-width: 80px !important;
-    }
-    .brand-name {
-        font-size: 1rem !important;
-    }
-    .brand-subtitle {
-        font-size: 0.6rem !important;
-    }
-}
-
-@media (max-width: 1200px) {
-    .navbar-logo-img {
-        height: 100%;
-    }
-    .brand-name {
-        font-size: 1.5rem;
-    }
-    .brand-subtitle {
-        font-size: 0.87rem;
-    }
-}
-/* Map Section (moved from subpage-shared.css) */
-.map-section {
-    width: 100%;
-    display: block;
-    margin: 0;
-}
-
-.map-section iframe {
-    width: 100vw;
-    height: 400px;
-    border: 0;
-    box-shadow: 0 8px 32px 8px rgba(0,0,0,0.07);
-}
-/* Insurance Logos Section */
-.insurance-logos-section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 40px 0;
-    background: #fff;
-}
-.insurance-logos-section img {
-    max-width: 1080px;
-    width: 100%;
-    height: auto;
-    box-shadow: 0 8px 32px 8px rgba(0,0,0,0.07);
-    background: #fff;
-}
-
-:root {
-    --primary-color: #18c3b7;
-    --secondary-color: #5866FF;
-    --dark-color: #3b4446;
-    --light-gray: #f8f8f8;
-    --text-gray: #6a6b6c;
-}
-
-/* Utility class for FontAwesome icons to use primary color */
-.fa-primary-color {
-    color: var(--primary-color) !important;
-}
-
-body {
-    font-family: 'Muli', sans-serif;
-    color: var(--text-gray);
-    font-size: 18px;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-
-/* Navbar Styles */
-.navbar {
-    background-color: #fff;
-    box-shadow: 0 2px 30px rgba(0,0,0,0.08);
-    padding: 10px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1050;
-    transition: box-shadow 0.3s;
-}
-
-body {
-    padding-top: 80px; /* Adjust if navbar height changes */
-}
-.navbar-brand img {
-    max-width: 280px;
-    height: auto;
-}
-
 .navbar-nav .nav-link {
-    color: var(--dark-color);
-    font-weight: 400;
-    font-size: 14px;
+    position: relative;
     padding: 5px 10px;
     margin: 0 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--dark-color);
     text-transform: capitalize;
     transition: all 0.3s ease;
-    position: relative;
 }
 
 .navbar-nav .nav-link::before {
@@ -317,10 +129,10 @@ body {
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
     width: 0;
     height: 2px;
     background-color: var(--primary-color);
+    transform: translateX(-50%);
     transition: width 0.3s ease;
 }
 
@@ -341,66 +153,35 @@ body {
     width: 80%;
 }
 
-/* Highlight active dropdown-item in the same way as nav-link.active */
-.navbar-nav .dropdown-item.active {
-    color: var(--primary-color);
-    font-weight: 600;
-    background-color: transparent;
+.nav-phone-link {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color) !important;
+    letter-spacing: 1px;
+    text-decoration: none !important;
+    transition: color 0.2s;
 }
 
-.navbar-nav .dropdown-item.active::before {
-    width: 80%;
+.nav-phone-link:hover,
+.nav-phone-link:focus {
+    color: #139a8f !important;
+    text-decoration: none !important;
 }
 
-.btn-appointment {
-    background: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    border-radius: 100px;
-    padding: 5px 42px;
-    font-weight: 600;
-    font-size: 14px;
-    text-transform: capitalize;
-    margin-left: 15px;
-    transition: all 0.3s ease;
-}
-
-.btn-appointment:hover {
-    background: var(--primary-color);
-    color: #fff;
-}
-
-/* Dropdown Menu Animation */
+/* Dropdown Menu */
 .navbar-nav .dropdown-menu {
-    border: none;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    border-radius: 8px;
     padding: 10px 0;
     margin-top: 10px;
-}
-
-/* Hover effect for desktop only */
-@media (min-width: 992px) {
-    .navbar-nav .dropdown-menu {
-        display: block;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-    }
-    
-    .navbar-nav .dropdown:hover .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(20,175,165,0.12);
 }
 
 .navbar-nav .dropdown-item {
-    padding: 10px 20px;
-    transition: all 0.2s ease;
-    color: var(--dark-color);
     position: relative;
+    padding: 10px 20px;
+    color: var(--dark-color);
+    transition: all 0.2s ease;
 }
 
 .navbar-nav .dropdown-item::before {
@@ -408,10 +189,10 @@ body {
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
     width: 0;
     height: 2px;
     background-color: var(--primary-color);
+    transform: translateX(-50%);
     transition: width 0.3s ease;
 }
 
@@ -424,17 +205,136 @@ body {
     width: 80%;
 }
 
-/* Hero Section */
+.navbar-nav .dropdown-item.active {
+    color: var(--primary-color);
+    font-weight: 600;
+    background-color: transparent;
+}
+
+.navbar-nav .dropdown-item.active::before {
+    width: 80%;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn-appointment {
+    padding: 5px 42px;
+    margin-left: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: capitalize;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 100px;
+    transition: all 0.3s ease;
+}
+
+.btn-appointment:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.btn-submit {
+    padding: 10px 42px;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: capitalize;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 100px;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.btn-submit i {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.btn-learn-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 42px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: capitalize;
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    max-width: fit-content;
+}
+
+.btn-learn-more i.fa-download {
+    margin-left: 10px;
+}
+
+.service-card-body .btn-learn-more {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-learn-more:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.service-card-link:hover .btn-learn-more {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.btn-learn-more i {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
 .hero-section {
     padding: 0;
     background-color: transparent;
 }
 
+.hero-section .container {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(20,175,165,0.10);
+}
+
 .hero-content h1 {
-    font-size: 40px;
-    color: var(--primary-color);
-    font-weight: 700;
     margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.hero-content h2 {
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
 .hero-content p {
@@ -451,76 +351,63 @@ body {
     height: 520px;
     object-fit: cover;
     object-position: top;
-    box-shadow: 6px 7px 12px rgba(0,0,0,0.5);
     border-radius: 4px;
+    box-shadow: 6px 7px 12px rgba(20,175,165,0.18);
 }
 
 .hero-badge {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: var(--light-gray);
     padding: 12px 20px;
+    background-color: var(--light-gray);
     border-radius: 4px;
     transform: translate(0, -50%);
 }
 
 .hero-badge h6 {
+    margin-bottom: 5px;
     font-size: 12px;
+    color: var(--dark-color);
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: var(--dark-color);
-    margin-bottom: 5px;
 }
 
 .hero-badge p {
+    margin: 0;
     font-size: 14px;
     letter-spacing: 5px;
     text-transform: uppercase;
-    margin: 0;
 }
 
-/* Services Section */
+/* ============================================
+   SERVICES SECTION
+   ============================================ */
 .services-section {
     background-color: var(--light-gray);
 }
 
-.hero-content {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
-
-.hero-content h2 {
-    font-size: 40px;
-    color: var(--primary-color);
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-/* Service Cards */
 .service-card-link {
-    text-decoration: none;
-    color: inherit;
     display: block;
     height: 100%;
+    color: inherit;
+    text-decoration: none;
 }
 
 .service-card {
-    background: #fff;
-    border-bottom: 1px solid var(--primary-color);
-    padding: 0;
-    margin-bottom: 30px;
-    transition: all 0.3s ease;
-    height: 100%;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    padding: 0;
+    margin-bottom: 30px;
+    background: #fff;
+    border-bottom: 1px solid var(--primary-color);
+    transition: all 0.3s ease;
 }
 
 .service-card-link:hover .service-card {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(20,175,165,0.15);
 }
 
 .service-card-img {
@@ -528,76 +415,63 @@ body {
     height: 280px;
     object-fit: cover;
     object-position: top;
-    box-shadow: 5px 6px 12px rgba(0,0,0,0.25);
+    box-shadow: 5px 6px 12px rgba(20,175,165,0.13);
 }
 
 .service-card-body {
-    padding: 30px;
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    padding: 30px;
 }
 
 .service-card-category {
+    margin-bottom: 10px;
     font-size: 12px;
+    font-weight: 700;
+    color: var(--primary-color) !important;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--primary-color) !important;
-    font-weight: 700;
-    margin-bottom: 10px;
 }
 
 .service-card-title {
+    margin-bottom: 15px;
     font-size: 10px;
+    color: var(--dark-color);
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: var(--dark-color);
-    margin-bottom: 15px;
 }
 
 .service-card-text {
+    flex-grow: 1;
+    margin-bottom: 20px;
     font-size: 16px;
     line-height: 1.4em;
-    margin-bottom: 20px;
-    flex-grow: 1;
 }
 
-.btn-learn-more {
-    background: transparent;
-    border: none;
-    color: var(--dark-color);
-    font-weight: 700;
-    font-size: 18px;
-    letter-spacing: 2px;
-    padding: 12px 15px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    box-shadow: 7px 4px 12px rgba(24,195,183,0.5);
-    transition: all 0.3s ease;
-}
-
-.service-card-link:hover .btn-learn-more {
-    color: var(--primary-color);
-}
-
-.btn-learn-more i {
-    margin-left: 10px;
-    font-size: 18px;
-}
-
-/* About Me Section */
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
 .about-section {
     padding: 60px 0;
     background-color: #fff;
+}
+
+.about-heading, 
+.testimonials-section h2,
+.contact-section h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: capitalize;
 }
 
 .about-image {
     max-width: 350px;
     object-fit: cover;
     object-position: top;
-    box-shadow: rgba(0,0,0,0.5) 6px 7px 12px 0px;
     border-radius: 0;
+    box-shadow: rgba(20,175,165,0.18) 6px 7px 12px 0px;
 }
 
 .about-credentials {
@@ -605,80 +479,59 @@ body {
 }
 
 .about-name {
-    letter-spacing: 4px;
     font-size: 12px;
-    color: var(--dark-color);
     font-weight: 700;
+    color: var(--dark-color);
+    letter-spacing: 4px;
     text-transform: uppercase;
 }
 
 .about-title {
-    letter-spacing: 5px;
-    font-size: 14px;
-    text-transform: uppercase;
     margin-top: 5px;
-}
-
-.about-heading, 
-.testimonials-section h2,
-.contact-section h2{
-    font-size: 40px;
-    color: var(--primary-color);
-    font-weight: 700;
-    text-transform: capitalize;
-}
-
-h2.contact-section-title,
-h3.contact-section-title {
-    color: var(--primary-color) !important;
+    font-size: 14px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
 }
 
 .about-text {
-    line-height: 1.5em;
     margin-bottom: 20px;
+    line-height: 1.5em;
     text-align: justify;
 }
 
-/* Testimonials Section */
+/* ============================================
+   TESTIMONIALS SECTION
+   ============================================ */
 .testimonials-section {
     background-color: var(--light-gray);
 }
 
 .testimonial-card {
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     height: 100%;
-}
-
-.contact-title-card {
-    background: #fff;
     padding: 30px;
+    background: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    margin-bottom: 32px;
-    display: block;
+    box-shadow: 0 4px 12px rgba(20,175,165,0.10);
 }
 
 .testimonial-icon {
+    margin-bottom: 15px;
     font-size: 35px;
     color: var(--primary-color);
-    margin-bottom: 15px;
 }
 
 .testimonial-author {
-    letter-spacing: 4px;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: var(--dark-color);
-    font-weight: 700;
     margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--dark-color);
+    letter-spacing: 4px;
+    text-transform: uppercase;
 }
 
 .testimonial-location {
-    font-size: 14px;
     margin-bottom: 15px;
+    font-size: 14px;
 }
 
 .testimonial-text {
@@ -687,71 +540,89 @@ h3.contact-section-title {
     color: var(--text-gray);
 }
 
-/* Contact Section */
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
 .contact-section {
     background-color: var(--light-gray);
 }
 
-.contact-form {
+.main-contact-us-section {
+    position: relative;
+    z-index: 1;
+    padding: 80px 0;
+    margin-top: -80px;
+    background-color: var(--page-bg-light);
+}
+
+.contact-title-card {
+    display: block;
+    margin-bottom: 32px;
+    padding: 30px;
     background: #fff;
-    padding: 40px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(20,175,165,0.10);
+}
+
+.contact-form {
+    padding: 40px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(20,175,165,0.10);
+}
+
+.contact-card-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 32px;
 }
 
 .form-control {
+    padding: 10px 0;
+    font-size: 12px;
+    color: #b7b7b7;
+    letter-spacing: 2px;
     border: none;
     border-bottom: 1px solid #d5d5d5;
     border-radius: 0;
-    padding: 10px 0;
-    font-size: 12px;
-    letter-spacing: 2px;
-    color: #b7b7b7;
 }
 
 .form-control:focus {
-    box-shadow: none;
-    border-bottom: 1px solid var(--primary-color);
     color: #8e8e8e;
+    border-bottom: 1px solid var(--primary-color);
+    box-shadow: none;
 }
 
-.btn-submit {
-    background: transparent;
-    border-bottom: 3px solid var(--primary-color);
-    color: var(--primary-color);
-    font-weight: 400;
-    letter-spacing: 2px;
-    font-size: 18px;
-    padding: 14px 14px 10px;
-    transition: all 0.3s ease;
-    margin-top: 20px;
-}
-
-.btn-submit:hover {
-    background: var(--primary-color);
-    color: #fff;
-}
-
-/* Footer */
+/* ============================================
+   FOOTER
+   ============================================ */
 .footer {
-    background-color: #fff;
     padding: 30px 0;
-    color: var(--text-gray);
     font-size: 14px;
-    border-top: 1px solid #e0e0e0;
+    color: var(--text-gray);
+    background-color: #fff;
 }
 
 .footer h6 {
-    font-size: 16px;
-    text-transform: uppercase;
-    color: var(--dark-color);
-    font-weight: 600;
     margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark-color);
+    text-transform: uppercase;
+}
+
+.footer-brand,
+.footer-brand:visited,
+.footer-brand:hover,
+.footer-brand:active,
+.footer-brand * {
+    text-decoration: none !important;
 }
 
 .footer-links {
-    list-style: none;
     padding: 0;
+    list-style: none;
 }
 
 .footer-links li {
@@ -768,8 +639,183 @@ h3.contact-section-title {
     color: var(--primary-color);
 }
 
-/* Responsive */
+.footer-links-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    border-top: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.footer-bottom-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.2s, text-decoration 0.2s;
+}
+
+.footer-bottom-link:hover {
+    color: var(--secondary-color);
+    text-decoration: underline solid;
+}
+
+/* ============================================
+   INSURANCE & MAP SECTIONS
+   ============================================ */
+.insurance-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px 0;
+    background: var(--light-gray);
+}
+
+.insurance-logo {
+    height: 80px;
+    max-width: 120px;
+    margin: 0 4px 8px 4px;
+    flex: 1 1 90px;
+    object-fit: contain;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(20,175,165,0.08);
+}
+
+.insurance-logos-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 40px 0;
+    background: #fff;
+}
+
+.insurance-logos-section img {
+    max-width: 1080px;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    box-shadow: 0 8px 32px 8px rgba(20,175,165,0.07);
+}
+
+.map-section {
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+.map-section iframe {
+    width: 100vw;
+    height: 400px;
+    border: 0;
+    box-shadow: 0 4px 12px 0px rgba(20,175,165,0.25);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.fa-primary-color {
+    color: var(--primary-color) !important;
+}
+
+.fee-price {
+    margin: 1rem 0 0.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* ============================================
+   MEDIA QUERIES
+   ============================================ */
+@media (min-width: 992px) {
+    .navbar-nav .dropdown-menu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    }
+    
+    .navbar-nav .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1200px) {
+    .navbar-logo-img {
+        height: 100%;
+    }
+    
+    .brand-name {
+        font-size: 1.5rem;
+    }
+    
+    .brand-subtitle {
+        font-size: 0.87rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar.py-2, 
+    .navbar .py-2 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    body {
+        padding-top: 0 !important;
+    }
+    
+    .contact-card-flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .contact-card-flex .map-container {
+        margin-left: 0 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 250px !important;
+    }
+}
+
 @media (max-width: 768px) {
+    .navbar-brand img {
+        max-width: 180px;
+    }
+    
+    .navbar-logo-img {
+        height: 40px !important;
+        max-height: 40px !important;
+        max-width: 80px !important;
+    }
+    
+    .brand-name {
+        font-size: 1rem !important;
+    }
+    
+    .brand-subtitle {
+        font-size: 0.6rem !important;
+    }
+    
+    .btn-appointment {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    
     .hero-content h1,
     .hero-content h2,
     .about-heading {
@@ -778,15 +824,6 @@ h3.contact-section-title {
     
     .hero-image img {
         height: 270px;
-    }
-    
-    .navbar-brand img {
-        max-width: 180px;
-    }
-    
-    .btn-appointment {
-        margin-left: 0;
-        margin-top: 10px;
     }
     
     .about-section {
@@ -811,10 +848,19 @@ h3.contact-section-title {
         font-size: 25px;
     }
     
-    /* Center dropdown menu on mobile */
+    .insurance-logo {
+        height: 40px;
+        max-width: 80px;
+        flex: 1 1 40%;
+    }
+    
+    .insurance-logos {
+        gap: 10px;
+    }
+    
     .navbar-nav {
-        text-align: center;
         width: 100%;
+        text-align: center;
     }
     
     .navbar-nav .nav-item {
@@ -822,23 +868,27 @@ h3.contact-section-title {
     }
     
     .navbar-nav .dropdown-menu {
-        text-align: center;
-        box-shadow: none;
-        background: transparent;
         border: none;
+        background: transparent;
+        box-shadow: none;
+        text-align: center;
     }
     
     .navbar-nav .dropdown-item {
-        background: transparent;
         margin: 5px auto;
         padding: 5px 10px;
+        background: transparent;
     }
 }
 
-.main-contact-us-section {
-    background-color: var(--page-bg-light);
-    padding: 80px 0;
-    margin-top: -80px;
-    position: relative;
-    z-index: 1;
+@media (max-width: 480px) {
+    .insurance-logo {
+        height: 32px;
+        max-width: 60px;
+        flex: 1 1 45%;
+    }
+    
+    .insurance-logos {
+        gap: 6px;
+    }
 }

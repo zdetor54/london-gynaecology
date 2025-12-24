@@ -1,9 +1,10 @@
-/* Make h3 headings teal in main content section */
-.main-content-section h3 {
-    color: var(--primary-color);
-}
-/* Shared Subpage Styles */
+/* ============================================
+   SUBPAGE SHARED STYLES
+   ============================================ */
 
+/* ============================================
+   CSS VARIABLES
+   ============================================ */
 :root {
     --page-bg-light: #f8f9fa;
     --text-muted: #666;
@@ -12,30 +13,38 @@
     --header-teal-end: rgba(87,173,179,0.8);
 }
 
-/* Page Header with Curved Bottom */
+/* ============================================
+   PAGE HEADER
+   ============================================ */
 .page-header {
-    background: var(--primary-color);
-    padding: 40px 0 120px 0;
-    margin-bottom: 0;
     position: relative;
     z-index: 10;
+    margin-bottom: 0;
+    padding: 40px 0 120px 0;
     overflow: hidden;
+    background: var(--primary-color);
 }
 
 .page-header h1 {
-    color: white;
-    font-weight: 300;
-    font-size: 42px;
     margin: 0;
+    font-size: 42px;
+    font-weight: 300;
+    color: white;
 }
 
-/* Main Content Section */
+/* ============================================
+   MAIN CONTENT SECTION
+   ============================================ */
 .main-content-section {
-    background-color: var(--page-bg-light);
-    padding: 80px 40px;
-    margin-top: -80px;
     position: relative;
     z-index: 1;
+    margin-top: -80px;
+    padding: 80px 40px;
+    background-color: var(--page-bg-light);
+}
+
+.main-content-section h3 {
+    color: var(--primary-color);
 }
 
 .main-content-section .row {
@@ -52,22 +61,22 @@
 }
 
 .content-column h1 {
+    margin-bottom: 1.5rem;
     font-size: 36px;
     font-weight: 700;
     line-height: 1.3;
-    margin-bottom: 1.5rem;
 }
 
 .content-column .highlight-text {
-    color: var(--accent-teal);
+    color: var(--primary-color);
 }
 
 .content-column p {
-    color: var(--text-muted);
+    max-width: 500px;
     font-size: 17px;
     line-height: 1.8;
+    color: var(--text-muted);
     text-align: left;
-    max-width: 500px;
 }
 
 .image-column {
@@ -80,13 +89,14 @@
     max-width: 100%;
     width: 80%;
     height: auto;
-    border-radius: 12px;
     padding: 0;
-    box-shadow: 0 10px 30px rgba(24, 195, 183, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(20,175,165,0.13);
 }
 
-
-/* Responsive adjustments */
+/* ============================================
+   MEDIA QUERIES
+   ============================================ */
 @media (max-width: 767px) {
     .page-header h1 {
         font-size: 32px;
@@ -97,8 +107,8 @@
     }
 
     .main-content-section {
-        padding: 40px 20px;
         margin-top: -60px;
+        padding: 40px 20px;
         border-radius: 12px;
     }
 

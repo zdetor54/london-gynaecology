@@ -1,4 +1,8 @@
-/* Remove any unwanted purple overlay in hero-section */
+/* ============================================
+   HERO SECTION WITH VIDEO BACKGROUND
+   ============================================ */
+
+/* Reset Hero Section Background */
 .hero-section, 
 .hero-section .container, 
 .hero-section .row, 
@@ -14,31 +18,33 @@
     box-shadow: none !important;
 }
 
-/* Hero Section with Video Background */
+/* Hero Section Layout */
 .hero-section {
     position: relative;
-    min-height: 600px;
     display: flex;
     align-items: center;
+    width: 100%;
+    min-height: 600px;
     padding: 80px 0 60px 0;
     margin: 0;
     overflow: hidden;
-    width: 100%;
     left: 0;
     right: 0;
 }
 
+/* Background Video */
 .hero-video {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: blur(4px);
-    z-index: 0;
 }
 
+/* Overlay */
 .hero-section::after {
     content: '';
     position: absolute;
@@ -46,12 +52,12 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.25);
     z-index: 1;
+    background: rgba(255, 255, 255, 0.25);
 }
 
+/* Content Container */
 .hero-section .container {
     position: relative;
     z-index: 2;
 }
-
