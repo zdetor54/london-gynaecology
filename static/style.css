@@ -1,3 +1,8 @@
+/* Add small padding to all h4 elements globally */
+h4 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
 /* Ensure hero-section container has a minimum height */
 .hero-section .container {
     min-height: 500px; /* Adjust as needed */
