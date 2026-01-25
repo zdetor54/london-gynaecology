@@ -36,6 +36,7 @@ function initContactForm() {
             subjectInput.value = `Appointment request from ${name} (${email})`;
         }
         
+        let ajaxFailed = false;
         try {
             const formData = new FormData(form);
             const response = await fetch(form.action, {
@@ -60,9 +61,16 @@ function initContactForm() {
                 // Reset the form
                 form.reset();
             } else {
+                ajaxFailed = true;
                 throw new Error('Form submission failed');
             }
         } catch (error) {
+            // If CORS/network error, fallback to regular POST
+            if (error instanceof TypeError || ajaxFailed) {
+                form.removeEventListener('submit', arguments.callee);
+                form.submit();
+                return;
+            }
             console.error('Form submission error:', error);
             // Show error message
             if (errorMessage) {
