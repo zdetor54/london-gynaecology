@@ -1,9 +1,9 @@
 // Function to initialize contact form
-function initContactForm() {
+window.initContactForm = function() {
     const form = document.querySelector('.contact-form');
     if (!form) {
         // Try again after a short delay if form not found
-        setTimeout(initContactForm, 100);
+        setTimeout(window.initContactForm, 100);
         return;
     }
     
@@ -28,15 +28,16 @@ function initContactForm() {
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
         
-        // Update subject with name and email
-        const name = form.querySelector('input[name="name"]').value;
-        const email = form.querySelector('input[name="email"]').value;
+        // Get values from form fields
+        const nameInput = form.querySelector('input[name="name"]');
+        const emailInput = form.querySelector('input[name="email"]');
         const subjectInput = form.querySelector('input[name="_subject"]');
+        const name = nameInput ? nameInput.value : '';
+        const email = emailInput ? emailInput.value : '';
         if (subjectInput) {
             subjectInput.value = `Appointment request from ${name} (${email})`;
         }
         
-        let ajaxFailed = false;
         try {
             const formData = new FormData(form);
             const response = await fetch(form.action, {
@@ -61,17 +62,9 @@ function initContactForm() {
                 // Reset the form
                 form.reset();
             } else {
-                ajaxFailed = true;
                 throw new Error('Form submission failed');
             }
         } catch (error) {
-            // If CORS/network error, fallback to regular POST
-            if (error instanceof TypeError || ajaxFailed) {
-                form.removeEventListener('submit', arguments.callee);
-                form.submit();
-                return;
-            }
-            console.error('Form submission error:', error);
             // Show error message
             if (errorMessage) {
                 errorMessage.style.display = 'block';
@@ -90,11 +83,11 @@ function initContactForm() {
     });
 }
 
-// Initialize when DOM is fully loaded
+// Only initialize after DOM is loaded
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initContactForm);
+    document.addEventListener('DOMContentLoaded', window.initContactForm);
 } else {
-    initContactForm();
+    window.initContactForm();
 }
 
 // Also try after delays to ensure the contact form has been loaded via fetch
