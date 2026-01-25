@@ -1,6 +1,18 @@
-<form class="contact-form" action="https://formsubmit.co/hca.tahmasebi.practice@gmail.com" method="POST">
+<form class="contact-form" action="https://formsubmit.co/ajax/hca.tahmasebi.practice@gmail.com" method="POST">
     <div class="section-title pb-4 text-center">
         <h1>Get in Touch</h1>
+    </div>
+    
+    <!-- Success Message -->
+    <div id="form-success-message" class="alert alert-success text-center" style="display: none;">
+        <i class="fas fa-check-circle me-2"></i>
+        <strong>Thank you!</strong> Your message has been sent successfully. We will get back to you soon.
+    </div>
+    
+    <!-- Error Message -->
+    <div id="form-error-message" class="alert alert-danger text-center" style="display: none;">
+        <i class="fas fa-exclamation-circle me-2"></i>
+        <strong>Oops!</strong> Something went wrong. Please try again or contact us directly.
     </div>
     
     <input type="hidden" name="_captcha" value="false">

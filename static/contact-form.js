@@ -7,39 +7,79 @@ function initContactForm() {
         return;
     }
     
-    // Set the redirect URL to current page with success parameter
-    const nextInput = document.getElementById('form-next');
-    if (nextInput) {
-        nextInput.value = window.location.origin + window.location.pathname + '?success=true';
-    }
+    // Prevent duplicate event listeners
+    if (form.dataset.initialized) return;
+    form.dataset.initialized = 'true';
     
-    // Update subject line with name and email before submission
-    form.addEventListener('submit', function(e) {
-        const name = this.querySelector('input[name="name"]').value;
-        const email = this.querySelector('input[name="email"]').value;
-        const subjectInput = document.getElementById('form-subject');
+    // Handle form submission via AJAX
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const successMessage = document.getElementById('form-success-message');
+        const errorMessage = document.getElementById('form-error-message');
+        const originalBtnText = submitBtn.innerHTML;
+        
+        // Hide any existing messages
+        if (successMessage) successMessage.style.display = 'none';
+        if (errorMessage) errorMessage.style.display = 'none';
+        
+        // Update button to show loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+        
+        // Update subject with name and email
+        const name = form.querySelector('input[name="name"]').value;
+        const email = form.querySelector('input[name="email"]').value;
+        const subjectInput = form.querySelector('input[name="_subject"]');
         if (subjectInput) {
-            subjectInput.value = `Contact from ${name} (${email})`;
+            subjectInput.value = `Appointment request from ${name} (${email})`;
+        }
+        
+        try {
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                // Show success message
+                if (successMessage) {
+                    successMessage.style.display = 'block';
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Auto-hide after 8 seconds
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 8000);
+                }
+                // Reset the form
+                form.reset();
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            // Show error message
+            if (errorMessage) {
+                errorMessage.style.display = 'block';
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Auto-hide after 8 seconds
+                setTimeout(() => {
+                    errorMessage.style.display = 'none';
+                }, 8000);
+            }
+        } finally {
+            // Restore button state
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
         }
     });
-    
-    // Check if redirected from FormSubmit success
-    const urlParams = new URLSearchParams(window.location.search);
-    const successMessage = document.getElementById('form-success-message');
-    
-    if (urlParams.get('success') === 'true' && successMessage) {
-        successMessage.style.display = 'block';
-        // Reset form
-        form.reset();
-        // Scroll to the success message
-        setTimeout(() => {
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 100);
-        // Hide message after 5 seconds
-        setTimeout(() => {
-            successMessage.style.display = 'none';
-        }, 5000);
-    }
 }
 
 // Initialize when DOM is fully loaded
