@@ -585,7 +585,7 @@ a:hover, a:focus {
 .contact-form {
     padding: 40px;
     color: #fff;
-    background: var(--primary-color);
+    background: var(--secondary-color);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(20,175,165,0.10);
 }
