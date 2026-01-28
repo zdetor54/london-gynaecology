@@ -232,17 +232,18 @@ a:hover, a:focus {
     margin-left: 15px;
     font-size: 14px;
     font-weight: 600;
-    color: var(--primary-color);
+    color: #fff;
     text-transform: capitalize;
-    background: transparent;
-    border: 2px solid var(--primary-color);
+    background: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
     border-radius: 100px;
     transition: all 0.3s ease;
 }
 
 .btn-appointment:hover {
-    background: var(--primary-color);
-    color: #fff;
+    background: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
 }
 
 .btn-submit {
