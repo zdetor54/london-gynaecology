@@ -227,8 +227,9 @@ a:hover, a:focus {
 /* ============================================
    BUTTONS
    ============================================ */
-.btn-appointment {
-    padding: 5px 42px;
+.btn-appointment,
+.btn-leave-review {
+    padding: 10px 42px;
     margin-left: 15px;
     font-size: 14px;
     font-weight: 600;
@@ -240,10 +241,20 @@ a:hover, a:focus {
     transition: all 0.3s ease;
 }
 
-.btn-appointment:hover {
+.btn-appointment:hover,
+.btn-leave-review:hover {
     background: transparent;
     color: var(--secondary-color);
     border: 2px solid var(--secondary-color);
+}
+
+.btn-leave-review:active,
+.btn-leave-review:focus {
+    background: var(--secondary-color);
+    color: #fff;
+    border: 2px solid var(--secondary-color);
+    outline: none;
+    box-shadow: none;
 }
 
 .btn-submit {
@@ -832,7 +843,8 @@ a:hover, a:focus {
         font-size: 0.6rem !important;
     }
     
-    .btn-appointment {
+    .btn-appointment,
+    .btn-leave-review  {
         margin-left: 0;
         margin-top: 10px;
     }
